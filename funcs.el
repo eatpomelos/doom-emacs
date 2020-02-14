@@ -1,0 +1,71 @@
+;;; ~/.doom.d/funcs.el -*- lexical-binding: t; -*-
+;;set transparent effect
+(setq alpha-list '((100 100) (75 45) (45 15)))
+(defun loop-alpha ()
+  (interactive)
+  (let ((h (car alpha-list))) ;; head value will set to
+    ((lambda (a ab)
+       (set-frame-parameter (selected-frame) 'alpha (list a ab))
+       (add-to-list 'default-frame-alist (cons 'alpha (list a ab)))
+       ) (car h) (car (cdr h)))
+    (setq alpha-list (cdr (append alpha-list (list h))))
+    )
+  )
+;; 当打开一个大的文件的时候使用另外的模式提升性能
+(defun pomelo/check-large-file ()
+  (when (> (buffer-size) 500000)
+    (progn (fundamental-mode)
+           (hl-line-mode -1))))
+
+(defun occur-dwim ()
+  "Call `occur' with a sane default."
+  (interactive)
+  (push (if (region-active-p)
+	          (buffer-substring-no-properties
+	           (region-beginning)
+	           (region-end))
+	        (let ((sym (thing-at-point 'symbol)))
+	          (when (stringp sym)
+              (regexp-quote sym))))
+	      regexp-history)
+  (call-interactively 'occur))
+
+;; 当用swiper查找某一个单词之后，自动将这一行放到屏幕中间
+(defadvice swiper (after pomelo-swiper-hack activate)
+  (recenter-top-bottom))
+
+(defadvice goto-line (after pomelo-goto-line-hack activate)
+  (recenter-top-bottom))
+
+(defadvice +default/search-project (after pomelo-helm-project-search-hack activate)
+  (recenter-top-bottom))
+
+;; 当关闭一个buffer的时候，如果当前的window 数大于1则删除这个window
+(defadvice spacemacs/kill-this-buffer (after pomelo-kill-buffer-hack activate)
+  (if (> (count-windows) 1)
+      (spacemacs/delete-window)))
+
+;; 定义一个自己函数用来建立snippet,这个函数是参考的源文件中的函数，中间有很多东西还不是很清楚
+(defun pomelo/yas-new-snippet (&optional no-template)
+  "Pops a new buffer for writing a snippet.
+
+Expands a snippet-writing snippet, unless the optional prefix arg
+NO-TEMPLATE is non-nil."
+  (interactive "P")
+  (let ((snippet-directories yas--default-user-snippets-dir)
+        (yas-selected-text (or yas-selected-text
+                               (and (region-active-p)
+                                    (buffer-substring-no-properties
+                                     (region-beginning) (region-end))))))
+
+    (switch-to-buffer yas-new-snippet-buffer-name)
+    (erase-buffer)
+    (kill-all-local-variables)
+    (snippet-mode)
+    (yas-minor-mode 1)
+    (set (make-local-variable 'yas--guessed-modes)
+         'emacs-lisp-mode)
+    (set (make-local-variable 'default-directory)
+         snippet-directories)
+    (if (and (not no-template) yas-new-snippet-default)
+        (yas-expand-snippet yas-new-snippet-default))))

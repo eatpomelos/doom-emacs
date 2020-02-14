@@ -56,7 +56,7 @@
        fold              ; (nigh) universal code folding
        ;;(format +onsave)  ; automated prettiness
        ;;god               ; run Emacs commands without modifier keys
-       ;;lispy             ; vim for lisp, for people who don't like vim
+       lispy             ; vim for lisp, for people who don't like vim
        multiple-cursors  ; editing in many places at once
        ;;objed             ; text object editing for the innocent
        ;;parinfer          ; turn lisp into python, sort of
@@ -179,3 +179,7 @@
        :config
        ;;literate
        (default +bindings +smartparens))
+
+(setq pomelo-doom-config-dir "~/.doom.d")
+(setq custom-file (expand-file-name "custom.el" pomelo-doom-config-dir))
+(load custom-file 'no-error 'no-message)
