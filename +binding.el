@@ -19,7 +19,7 @@
 (global-set-key (kbd "C-c v") 'set-mark-command)
 (global-set-key (kbd "C-c C-l") 'goto-line)
 (global-set-key (kbd "C-c -") 'text-scale-decrease)
-(global-set-key (kbd "C-c +") 'text-scale-increase)
+(global-set-key (kbd "C-c =") 'text-scale-increase)
 (global-set-key (kbd "M-=") 'count-words)
 
 ;; 编程相关的一些快捷键
@@ -28,7 +28,7 @@
 
 (define-key! evil-insert-state-map "C-k" 'evil-delete-line)
 (define-key! evil-insert-state-map "C-x C-s" 'save-buffer)
-
+ø
 (define-leader-key! "w/" 'split-window-right)
 (define-leader-key! "w-" 'split-window-below)
 
