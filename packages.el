@@ -56,3 +56,4 @@
 (package! org-pomodoro)
 (package! minimap)
 (package! vc-msg)
+(package! winum)

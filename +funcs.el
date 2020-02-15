@@ -1,5 +1,6 @@
 ;;; ~/.doom.d/funcs.el -*- lexical-binding: t; -*-
 ;;set transparent effect
+;;-
 (setq alpha-list '((100 100) (75 45) (45 15)))
 (defun loop-alpha ()
   (interactive)

@@ -3,12 +3,12 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; refresh' after modifying this file!
 
-(load! "funcs")
-(load! "ui")
-(load! "misc")
-(load! "org")
-(load! "prog")
-(load! "binding")
+(load! "+funcs")
+(load! "+ui")
+(load! "+misc")
+(load! "+prog")
+(load! "+binding")
+(load! "+org")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
