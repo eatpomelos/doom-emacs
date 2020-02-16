@@ -28,7 +28,7 @@
 
 (define-key! evil-insert-state-map "C-k" 'evil-delete-line)
 (define-key! evil-insert-state-map "C-x C-s" 'save-buffer)
-ø
+
 (define-leader-key! "w/" 'split-window-right)
 (define-leader-key! "w-" 'split-window-below)
 

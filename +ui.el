@@ -12,10 +12,18 @@
  (use-package! winum
    :init
    :config
-   (define-leader-key! "1" 'winum-select-window-1)
-   (define-leader-key! "2" 'winum-select-window-2)
-   (define-leader-key! "3" 'winum-select-window-3)
-   (define-leader-key! "4" 'winum-select-window-4)
-   (define-leader-key! "5" 'winum-select-window-5)
-   (define-leader-key! "6" 'winum-select-window-6)
+   (winum-mode)
+   (map! :leader
+         "0" 'winum-select-window-0-or-10
+         "1" 'winum-select-window-1
+         "2" 'winum-select-window-2
+         "3" 'winum-select-window-3
+         "4" 'winum-select-window-4
+         "5" 'winum-select-window-5
+         "6" 'winum-select-window-6
+         )
    )
+
+(pushnew! initial-frame-alist '(width . 200) '(height . 55))
+(add-hook 'window-setup-hook #'toggle-frame-maximized)
+;; (add-hook 'window-setup-hook #'toggle-frame-fullscreen)
