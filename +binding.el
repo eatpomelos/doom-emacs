@@ -34,3 +34,4 @@
 
 (define-key! evil-insert-state-map "C-n" 'next-line)
 (define-key! evil-insert-state-map "C-p" 'previous-line)
+(define-leader-key! "bw" 'read-only-mode)

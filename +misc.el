@@ -50,5 +50,9 @@
 
 (add-hook 'find-file-hook 'pomelo/check-large-file)
 
- ;; 当输入lambda的时候变成一个符号
+(setq ispell-dictionary "american")
+(add-hook! org-mode  #'flyspell-mode)
+(setq doom-scratch-buffer-major-mode 'org-mode)
+
+;; 当输入lambda的时候变成一个符号
 (global-prettify-symbols-mode 1)
