@@ -56,3 +56,6 @@
 
 ;; 当输入lambda的时候变成一个符号
 (global-prettify-symbols-mode 1)
+
+;; 读取测试的简单配置
+(load! "+test")

@@ -77,3 +77,13 @@
   :config
   (global-set-key (kbd "C-c mi") 'vc-msg-show)
   (define-leader-key! "dm" 'vc-msg-show))
+
+;; 将注释替换成evil-nerd-commenter 的替换方式，下面是map!的用法
+
+(use-package! evil-nerd-commenter
+  :config
+  (map! :map prog-mode-map
+        :g "M-;" 'evilnc-comment-or-uncomment-lines
+        :n "lp" 'evilnc-comment-or-uncomment-paragraphs
+        :v "ll" 'comment-or-uncomment-region)
+  )

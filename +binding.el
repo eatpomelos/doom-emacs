@@ -10,10 +10,16 @@
 (bind-key* "C-s" 'swiper)
 
 ;; 代码折叠的快捷键
-(define-key prog-mode-map (kbd "C-c sa") 'hs-show-all)
-(define-key prog-mode-map (kbd "C-c ha") 'hs-hide-all)
-(define-key prog-mode-map (kbd "C-c sb") 'hs-show-block)
-(define-key prog-mode-map (kbd "C-c hb") 'hs-hide-block)
+;; (define-key prog-mode-map (kbd "C-c sa") 'hs-show-all)
+;; (define-key prog-mode-map (kbd "C-c ha") 'hs-hide-all)
+;; (define-key prog-mode-map (kbd "C-c sb") 'hs-show-block)
+;; (define-key prog-mode-map (kbd "C-c hb") 'hs-hide-block)
+(map! :map prog-mode-map
+      :g "C-c sa" #'hs-show-all
+      :g "C-c ha" #'hs-hide-all
+      :g "C-c sb" #'hs-show-block
+      :g "C-c hb" #'hs-hide-block
+      :i "C-c ," #'company-yasnippet)
 
 ;; 编辑相关的快捷键
 (global-set-key (kbd "C-c v") 'set-mark-command)
@@ -23,7 +29,7 @@
 (global-set-key (kbd "M-=") 'count-words)
 
 ;; 编程相关的一些快捷键
-(define-key prog-mode-map (kbd "C-c ,") 'company-yasnippet)
+;; (define-key prog-mode-map (kbd "C-c ,") 'company-yasnippet)
 (define-key emacs-lisp-mode-map (kbd "C-c eb") 'eval-buffer)
 
 (define-key! evil-insert-state-map "C-k" 'evil-delete-line)

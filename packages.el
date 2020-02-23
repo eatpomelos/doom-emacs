@@ -57,3 +57,4 @@
 (package! minimap)
 (package! vc-msg)
 (package! winum)
+(package! evil-nerd-commenter)
