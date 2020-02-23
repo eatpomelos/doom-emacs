@@ -84,6 +84,7 @@
   :config
   (map! :map prog-mode-map
         :g "M-;" 'evilnc-comment-or-uncomment-lines
+        :leader
         :n "lp" 'evilnc-comment-or-uncomment-paragraphs
         :v "ll" 'comment-or-uncomment-region)
   )
