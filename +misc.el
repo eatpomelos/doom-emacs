@@ -18,6 +18,11 @@
   :ensure t
   :config (edit-server-start))
 
+(use-package! neotree
+  :defer t
+  :config
+  (define-leader-key! "ft" 'neotree-toggle)
+  )
 
 (define-abbrev-table 'global-abbrev-table '(
 
@@ -56,6 +61,14 @@
 
 ;; 当输入lambda的时候变成一个符号
 (global-prettify-symbols-mode 1)
+
+;; 设置延迟加载，并且如果想要开启两重行号显示则运行linum-mode或者global-linum-mode，只运行一个相对行号就运行linum-relative-mode
+(use-package! linum-relative
+  :defer t
+  :init (setq linum-relative-backend 'display-line-numbers-mode)
+  :config
+  (add-hook! '(global-linum-mode-hook linum-mode-hook) 'linum-relative-mode)
+  )
 
 ;; 读取测试的简单配置
 (load! "+test")
