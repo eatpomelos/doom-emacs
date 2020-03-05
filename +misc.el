@@ -66,8 +66,6 @@
 (use-package! linum-relative
   :defer t
   :init (setq linum-relative-backend 'display-line-numbers-mode)
-  :config
-  (add-hook! '(global-linum-mode-hook linum-mode-hook) 'linum-relative-mode)
   )
 
 ;; 读取测试的简单配置

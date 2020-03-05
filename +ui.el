@@ -27,3 +27,8 @@
 (pushnew! initial-frame-alist '(width . 200) '(height . 55))
 (add-hook 'window-setup-hook #'toggle-frame-maximized)
 ;; (add-hook 'window-setup-hook #'toggle-frame-fullscreen)
+
+;; 先装在这里，如果比较耗资源就删除
+(use-package! nyan-mode
+  :init
+  (nyan-mode t))

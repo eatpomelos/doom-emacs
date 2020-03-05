@@ -59,3 +59,5 @@
 (package! winum)
 (package! evil-nerd-commenter)
 (package! linum-relative)
+(package! bongo)
+(package! nyan-mode)
