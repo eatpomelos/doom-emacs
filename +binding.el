@@ -1,9 +1,6 @@
 ;;; ~/.doom.d/binding.el -*- lexical-binding: t; -*-
 
-(global-set-key (kbd "M-s o") 'occur-dwim)
-
 (bind-key* "<f9>" 'loop-alpha)
-(bind-key* "C-r" 'delete-backward-char)
 (bind-key* "C-s" 'swiper)
 (bind-key* "C-c k" 'which-key-show-top-level)
 
@@ -20,7 +17,10 @@
       :g "C-c ha" #'hs-hide-all
       :g "C-c sb" #'hs-show-block
       :g "C-c hb" #'hs-hide-block
-      :i "C-c ," #'company-yasnippet)
+      :g "M-s o" #'occur-dwim
+      :i "C-c ," #'company-yasnippet
+      :i "C-r" #'delete-backward-char
+      :i "C-y" #'yank)
 
 ;; 编辑相关的快捷键
 (global-set-key (kbd "C-c v") 'set-mark-command)
@@ -42,6 +42,6 @@
 
 (define-key! evil-insert-state-map "C-n" 'next-line)
 (define-key! evil-insert-state-map "C-p" 'previous-line)
-(define-leader-key! "bw" 'read-only-mode)
 
+(define-leader-key! "bw" 'read-only-mode)
 (define-leader-key! "ft" 'neotree)
