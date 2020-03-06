@@ -61,3 +61,4 @@
 (package! linum-relative)
 (package! bongo)
 (package! nyan-mode)
+(package! elisp-demos)

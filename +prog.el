@@ -88,3 +88,10 @@
         :n "lp" 'evilnc-comment-or-uncomment-paragraphs
         :v "ll" 'comment-or-uncomment-region)
   )
+
+;; 在解释elisp函数的时候在下面显示一个示例
+(use-package! elisp-demos
+  :defer t
+  :init
+  (advice-add 'describe-function-1 :after #'elisp-demos-advice-describe-function-1)
+  (advice-add 'helpful-update :after #'elisp-demos-advice-helpful-update))
