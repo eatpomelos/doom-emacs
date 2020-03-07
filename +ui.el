@@ -32,3 +32,11 @@
 (use-package! nyan-mode
   :init
   (nyan-mode t))
+
+(when IS-WINDOWS
+  (define-leader-key! "sp" 'counsel-ag)
+  (setq locale-coding-system 'gbk)
+  (set-default 'process-coding-system-alist
+               '(("[pP][lL][iI][nN][kK]" gbk-dos . gbk-dos)
+                 ("[cC][mM][dD][pP][rR][oO][xX][yY]" gbk-dos . gbk-dos)
+                 ("[rR][gG]" utf-8-dos . gbk-dos))))
