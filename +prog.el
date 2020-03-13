@@ -58,15 +58,6 @@
                   '("-std=c++1z"))
             ))
 
-;; ;; yasnippets config
-;; (eval-after-load 'yasnippet
-;;   '(progn
-;;      (let ((my-yasnippets "d:/Emacs/.spacemacs.d/snippets"))
-;;        (add-to-list 'yas-snippet-dirs my-yasnippets)
-;;        )
-;;      (yas-reload-all)
-;;      ))
-
 (use-package! minimap
   :defer t
   :config

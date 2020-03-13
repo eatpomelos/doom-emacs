@@ -64,8 +64,11 @@
 
 ;; 设置延迟加载，并且如果想要开启两重行号显示则运行linum-mode或者global-linum-mode，只运行一个相对行号就运行linum-relative-mode
 (use-package! linum-relative
-  :defer t
-  :init (setq linum-relative-backend 'display-line-numbers-mode)
+  :init
+  (setq linum-relative-backend 'display-line-numbers-mode)
+  :config
+  (global-set-key (kbd "<f8>") 'linum-relative-toggle)
+  (global-set-key (kbd "<f7>") 'linum-mode)
   )
 
 ;; 读取测试的简单配置
