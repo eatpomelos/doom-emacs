@@ -102,11 +102,11 @@
     (setq lsp-clients-clangd-executable "/usr/bin/clangd-9")
   nil)
 (use-package! lsp-mode
-  :init (setq lsp-keymap-prefix "s-l")
+  :init (setq lsp-keymap-prefix "C-'")
   :hook (
          (c-mode . lsp)
          (c++-mode . lsp)
-         ;; (lsp-mode . lsp-enable-which-key-intergration)
+         (lsp-mode . lsp-enable-which-key-integration)
          )
   :commands lsp)
 
@@ -117,3 +117,6 @@
 (use-package! lsp-treemacs :commands lsp-tremacs-errors-list)
 
 (use-package! dap-mode)
+
+(with-eval-after-load 'lsp-mode
+  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration))
