@@ -95,3 +95,25 @@
   :init
   (advice-add 'describe-function-1 :after #'elisp-demos-advice-describe-function-1)
   (advice-add 'helpful-update :after #'elisp-demos-advice-helpful-update))
+
+;; 下面是lsp相关的配置，由于没有安装ccls，这里使用clangd
+;; 在自己的虚拟机上面的clangd的路径，首先熟悉lsp-mode的使用，这里暂时不做其他的配置
+(if IS-LINUX
+    (setq lsp-clients-clangd-executable "/usr/bin/clangd-9")
+  nil)
+(use-package! lsp-mode
+  :init (setq lsp-keymap-prefix "s-l")
+  :hook (
+         (c-mode . lsp)
+         (c++-mode . lsp)
+         ;; (lsp-mode . lsp-enable-which-key-intergration)
+         )
+  :commands lsp)
+
+(use-package! lsp-ui :commands lsp-ui-mode)
+(use-package! company-lsp :commands company-lsp)
+
+(use-package! lsp-ivy :commands lsp-ivy-workspace-symbol)
+(use-package! lsp-treemacs :commands lsp-tremacs-errors-list)
+
+(use-package! dap-mode)

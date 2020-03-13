@@ -33,7 +33,7 @@
 ;; (define-key prog-mode-map (kbd "C-c ,") 'company-yasnippet)
 (define-key emacs-lisp-mode-map (kbd "C-c eb") 'eval-buffer)
 
-(define-key! evil-insert-state-map "C-k" 'lispy-kill)
+(define-key! evil-insert-state-map "C-k" 'kill-line)
 (define-key! evil-insert-state-map "C-x C-s" 'save-buffer)
 
 (define-leader-key! "w/" 'split-window-right)

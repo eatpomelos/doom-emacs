@@ -62,3 +62,4 @@
 (package! bongo)
 (package! nyan-mode)
 (package! elisp-demos)
+(package! dap-mode)
