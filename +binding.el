@@ -20,7 +20,10 @@
       :g "M-s o" #'occur-dwim
       :i "C-c ," #'company-yasnippet
       :i "C-r" #'delete-backward-char
-      :i "C-y" #'yank)
+      :i "C-y" #'yank
+      :g "C-;" #'iedit-mode)
+
+(global-set-key  (kbd "C-c C-/") #'pop-global-mark)
 
 ;; 编辑相关的快捷键
 (global-set-key (kbd "C-c v") 'set-mark-command)
@@ -34,7 +37,7 @@
 (define-key emacs-lisp-mode-map (kbd "C-c eb") 'eval-buffer)
 
 (define-key! evil-insert-state-map "C-k" 'kill-line)
-(define-key! evil-insert-state-map "C-x C-s" 'save-buffer)
+(define-key! evil-insert-state-map "C-x C-s" #'save-buffer)
 
 (define-leader-key! "w/" 'split-window-right)
 (define-leader-key! "w-" 'split-window-below)

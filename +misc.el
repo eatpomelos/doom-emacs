@@ -70,3 +70,28 @@
 
 ;; 读取测试的简单配置
 ;; (load! "+test")
+(setq recentf-exclude
+      '("COMMIT_MSG"
+        "COMMIT_EDITMSG"
+        "github.*txt$"
+        "/tmp/"
+        "/ssh:"
+        "/sudo:"
+        "/TAGS$"
+        "/GTAGS$"
+        "/GRAGS$"
+        "/GPATH$"
+        "\\.mkv$"
+        "\\.mp[34]$"
+        "\\.avi$"
+        "\\.pdf$"
+        "\\.sub$"
+        "\\.srt$"
+        "\\.ass$"
+        ".*png$"
+        ".*bmp$"
+        ".*db$"
+        "init\\.el$"
+        "/agenda/"
+        "/autosave"
+        "\\.doom\\.d/"))

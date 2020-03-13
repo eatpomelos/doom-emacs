@@ -42,9 +42,9 @@
   (recenter-top-bottom))
 
 ;; 当关闭一个buffer的时候，如果当前的window 数大于1则删除这个window
-(defadvice spacemacs/kill-this-buffer (after pomelo-kill-buffer-hack activate)
+(defadvice kill-current-buffer (after pomelo-kill-buffer-hack activate)
   (if (> (count-windows) 1)
-      (spacemacs/delete-window)))
+      (+workspace/close-window-or-workspace)))
 
 ;; 定义一个自己函数用来建立snippet,这个函数是参考的源文件中的函数，中间有很多东西还不是很清楚
 (defun pomelo/yas-new-snippet (&optional no-template)
