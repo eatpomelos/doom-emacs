@@ -6,6 +6,7 @@
       user-mail-address "2845748931@qq.com")
 
 (setq company-idle-delay 0.1)
+(setq default-directory "~")
 
 (use-package! youdao-dictionary
   :defer t
