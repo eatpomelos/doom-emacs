@@ -1,7 +1,8 @@
 ;;; ~/.doom.d/funcs.el -*- lexical-binding: t; -*-
 ;;set transparent effect
 ;;-
-(setq alpha-list '((100 100) (75 45) (45 15)))
+;; (setq alpha-list '((100 100) (75 45) (45 15)))
+(setq alpha-list '((100 100) (75 45)))
 (defun loop-alpha ()
   (interactive)
   (let ((h (car alpha-list))) ;; head value will set to
@@ -33,6 +34,9 @@
 
 ;; 当用swiper查找某一个单词之后，自动将这一行放到屏幕中间
 (defadvice swiper (after pomelo-swiper-hack activate)
+  (recenter-top-bottom))
+
+(defadvice counsel-ag (after pomelo-ag-hack activate)
   (recenter-top-bottom))
 
 (defadvice goto-line (after pomelo-goto-line-hack activate)

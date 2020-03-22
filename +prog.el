@@ -34,7 +34,7 @@
    '((my-c-mode-font-lock-if0 (0 font-lock-comment-face prepend))) 'add-to-end))
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook-if0)
-;;highlight end
+;; ;;highlight end
 
 ;; load kbd macro file
 ;; (load-file macro-file-path)

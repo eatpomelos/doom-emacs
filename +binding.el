@@ -1,6 +1,9 @@
 ;;; ~/.doom.d/binding.el -*- lexical-binding: t; -*-
 
 (bind-key* "<f9>" 'loop-alpha)
+(bind-key* "<f6>" 'abbrev-mode)
+(bind-key* "<f12>" 'shell)
+
 (bind-key* "C-s" 'swiper)
 (bind-key* "C-c k" 'which-key-show-top-level)
 

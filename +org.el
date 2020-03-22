@@ -12,11 +12,12 @@
 ;;                                ("PAUSE" . "cyan1")))
 
 ;; 定义一个函数,在需要编写英语单词的时候,打开本地的文件用来进行单词的补全
+;;;###autoload
 (defun pomelo|load-localdictionary ()
   "Load local dictionary to complement."
   (interactive)
   (let ((pomelo-local-dictionary "~/pomelo/english/english-words.txt"))
-      (find-file-read-only pomelo-local-dictionary)
+    (find-file-read-only pomelo-local-dictionary)
     (evil-switch-to-windows-last-buffer)))
 
 (global-set-key (kbd "C-c d") 'pomelo|load-localdictionary)
