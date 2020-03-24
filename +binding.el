@@ -24,15 +24,16 @@
       :i "C-c ," #'company-yasnippet
       :i "C-r" #'delete-backward-char
       :i "C-y" #'yank
+      :i "C-d" #'delete-char
       :g "C-;" #'iedit-mode)
 
-(global-set-key  (kbd "C-c C-/") #'pop-global-mark)
+(global-set-key (kbd "C-c C-/") #'pop-global-mark)
+(global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c a") 'org-agenda)
 
 ;; 编辑相关的快捷键
 (global-set-key (kbd "C-c v") 'set-mark-command)
 (global-set-key (kbd "C-c C-l") 'goto-line)
-(global-set-key (kbd "C-c -") 'text-scale-decrease)
-(global-set-key (kbd "C-c =") 'text-scale-increase)
 (global-set-key (kbd "M-=") 'count-words)
 
 ;; 编程相关的一些快捷键
@@ -50,4 +51,5 @@
 (define-key! evil-insert-state-map "C-p" 'previous-line)
 
 (define-leader-key! "bw" 'read-only-mode)
-(define-leader-key! "ft" 'neotree)
+
+(define-key! org-agenda-mode-map "C-," 'org-pomodoro)

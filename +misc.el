@@ -7,6 +7,7 @@
 
 (setq company-idle-delay 0.1)
 (setq default-directory "~")
+;; (setq default-directory "D:/pomelo")
 
 (use-package! youdao-dictionary
   :defer t
