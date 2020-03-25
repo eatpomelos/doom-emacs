@@ -16,9 +16,11 @@
   (define-leader-key! "os" 'youdao-dictionary-play-voice-at-point)
   )
 
-;; (use-package! edit-server
-;;   :ensure t
-;;   :config (edit-server-start))
+(if IS-WINDOWS
+    (use-package! edit-server
+      :ensure t
+      :config (edit-server-start))
+  nil)
 
 (use-package! neotree
   :defer t
@@ -100,3 +102,6 @@
         "/agenda/"
         "/autosave"
         "\\.doom\\.d/"))
+
+(use-package! bongo
+  :defer t)

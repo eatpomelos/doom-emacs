@@ -89,9 +89,11 @@
 
 ;; 下面是lsp相关的配置，由于没有安装ccls，这里使用clangd
 ;; 在自己的虚拟机上面的clangd的路径，首先熟悉lsp-mode的使用，这里暂时不做其他的配置
-(if IS-LINUX
-    (setq lsp-clients-clangd-executable "/usr/bin/clangd-9")
-  nil)
+
+;; (if IS-LINUX
+;;     (setq lsp-clients-clangd-executable "/usr/bin/clangd-9")
+;;   nil)
+
 (use-package! lsp-mode
   :init (setq lsp-keymap-prefix "C-'")
   :hook (
