@@ -67,3 +67,4 @@
 (package! nyan-mode)
 (package! elisp-demos)
 (package! dap-mode)
+(package! tiny)
