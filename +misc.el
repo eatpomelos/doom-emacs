@@ -16,9 +16,9 @@
   (define-leader-key! "os" 'youdao-dictionary-play-voice-at-point)
   )
 
-(use-package! edit-server
-  :ensure t
-  :config (edit-server-start))
+;; (use-package! edit-server
+;;   :ensure t
+;;   :config (edit-server-start))
 
 (use-package! neotree
   :defer t
