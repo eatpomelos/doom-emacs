@@ -50,6 +50,10 @@
 ;; This is required for some packages whose default branch isn't 'master' (which
 ;; our package manager can't deal with; see raxod502/straight.el#279)
                                         ;(package! builtin-package :recipe (:branch "develop"))
+(setq package-archives
+   '(("gnu" . "http://elpa.emacs-china.org/gnu/")
+     ("melpa" . "http://elpa.emacs-china.org/melpa/")
+     ("org" . "http://elpa.emacs-china.org/org/")))
 
 (package! youdao-dictionary)
 (package! edit-server)

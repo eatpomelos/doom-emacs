@@ -8,10 +8,6 @@
  '(column-number-mode t)
  '(display-time-mode t)
  '(neo-window-position 'left)
- '(package-archives
-   '(("gnu" . "http://elpa.emacs-china.org/gnu/")
-     ("melpa" . "http://elpa.emacs-china.org/melpa/")
-     ("org" . "http://elpa.emacs-china.org/org/")))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(which-key-idle-delay 0.2))

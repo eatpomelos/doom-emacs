@@ -53,3 +53,5 @@
 (define-leader-key! "bw" 'read-only-mode)
 
 (define-key! org-agenda-mode-map "C-," 'org-pomodoro)
+
+(define-leader-key! "sp" 'counsel-ag)
