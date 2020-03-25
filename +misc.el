@@ -46,7 +46,19 @@
                                             ("7wp" "Wikipedia")
                                             ("7ms" "Microsoft")
                                             ("7g" "Google")
+                                            ("7b" "baidu")
+                                            ("7c" "chenbin")
+
+                                            ;; some symbols
+                                            ("7fm" "♀")
+                                            ("7m" "♂")
                                             ("7win" "Windows")
+
+                                            ;; website
+                                            ("7doom" "https://github.com/hlissner/doom-emacs")
+                                            ("7space" "https://github.com/syl20bnr/spacemacs/")
+                                            ("7ec" "https://emacs-china.org/")
+                                            ("7pur" "https://github.com/purcell/emacs.d")
 
                                             ;; signature
                                             ("7pme" "pomelo")
@@ -54,6 +66,7 @@
                                             ;; emacs regex
                                             ("7d" "\\([0-9]+?\\)")
                                             ("7str" "\\([^\"]+?\\)\"")))
+
 
 (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit)
 
