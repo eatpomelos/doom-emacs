@@ -6,8 +6,16 @@
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(column-number-mode t)
+ '(custom-safe-themes
+   (quote
+    ("0acecfb9122ccb3221a389c4da3dc4103e7ad203074ae241d4fca524102e9a82" default)))
  '(display-time-mode t)
- '(neo-window-position 'left)
+ '(neo-window-position (quote left))
+ '(package-archives
+   (quote
+    (("gnu" . "http://elpa.emacs-china.org/gnu/")
+     ("melpa" . "http://elpa.emacs-china.org/melpa/")
+     ("org" . "http://elpa.emacs-china.org/org/"))))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(which-key-idle-delay 0.2))

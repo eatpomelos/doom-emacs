@@ -183,3 +183,4 @@
 (setq pomelo-doom-config-dir "~/.doom.d")
 (setq custom-file (expand-file-name "custom.el" pomelo-doom-config-dir))
 (load custom-file 'no-error 'no-message)
+(package-initialize)
