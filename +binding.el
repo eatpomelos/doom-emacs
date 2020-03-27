@@ -7,6 +7,7 @@
 (bind-key* "C-s" 'swiper)
 (bind-key* "C-c k" 'which-key-show-top-level)
 (bind-key* "C-l" 'recenter-top-bottom)
+(bind-key* "C-k" 'kill-line)
 
 ;; 代码折叠的快捷键
 ;; (define-key prog-mode-map (kbd "C-c sa") 'hs-show-all)

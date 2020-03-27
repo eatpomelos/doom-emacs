@@ -74,3 +74,15 @@ NO-TEMPLATE is non-nil."
          snippet-directories)
     (if (and (not no-template) yas-new-snippet-default)
         (yas-expand-snippet yas-new-snippet-default))))
+
+(defun pomelo/indent-buffer ()
+  "Indent buffer."
+  (interactive)
+  (save-excursion
+    (indent-region (point-min) (point-max)))
+  )
+
+;; when tiny expand finished indent this buffer
+(defadvice tiny-expand (after pomelo-tiny-expand-hack activate)
+  (pomelo/indent-buffer)
+  )
