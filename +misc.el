@@ -120,10 +120,9 @@
   :defer t)
 
 (use-package! ace-pinyin
-  :defer 5
-  :hook
-  (prog-mode . ace-pinyin-mode)
-  ;; :init (ace-pinyin-global-mode +1)
+  ;; :hook
+  ;; (prog-mode . ace-pinyin-mode)
+  :init (ace-pinyin-global-mode +1)
   :config
-  (bind-key* "C-c /" 'ace-pinyin-jump-char-2)
+  (bind-key* "C-c /" #'ace-pinyin-jump-char-2)
   )
