@@ -99,6 +99,7 @@
   :hook (
          (c-mode . lsp)
          (c++-mode . lsp)
+         (prog-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration)
          )
   :commands lsp)
