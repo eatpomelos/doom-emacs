@@ -4,4 +4,3 @@
 tmp/
 *.elc
 +test.el
-.local/
