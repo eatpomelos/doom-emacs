@@ -24,8 +24,9 @@
 
 (use-package! neotree
   :defer t
-  :config
-  (define-leader-key! "ft" 'neotree-toggle)
+  :init
+  (setq inhibit-compacting-font-caches t)
+  (setq neo-theme 'icons)
   )
 
 (define-abbrev-table 'global-abbrev-table '(
@@ -126,3 +127,6 @@
   :config
   (bind-key* "C-c /" #'ace-pinyin-jump-char-2)
   )
+
+;; (use-package! color-rg
+;;   :)

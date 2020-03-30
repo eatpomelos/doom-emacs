@@ -51,4 +51,5 @@
       "w/" 'split-window-right
       "w-" 'split-window-below
       "bw" 'read-only-mode
+      "ft" 'neotree-toggle
       )
