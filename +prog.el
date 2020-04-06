@@ -95,16 +95,28 @@
 ;;   nil)
 
 (use-package! lsp-mode
+  :defer t
   :init (setq lsp-keymap-prefix "C-'")
   :hook (
          (c-mode . lsp)
          (c++-mode . lsp)
-         (prog-mode . lsp)
+         (java-mode . lsp)
+         (perl-mode . lsp)
+         (css-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration)
          )
   :commands lsp)
 
-(use-package! lsp-ui :commands lsp-ui-mode)
+(use-package! lsp-ui
+  :commands lsp-ui-mode
+  :init
+  (require 'lsp-ui-doc)
+  :hook
+  (
+   (lsp-mode . lsp-ui-mode)
+   (lsp-mode . lsp-ui-doc-mode))
+  )
+
 (use-package! company-lsp :commands company-lsp)
 
 (use-package! lsp-ivy :commands lsp-ivy-workspace-symbol)
@@ -114,3 +126,8 @@
 
 (with-eval-after-load 'lsp-mode
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration))
+
+(use-package! lsp-java
+  :defer t
+  :init
+  (add-hook 'java-mode-hook #'lsp))
