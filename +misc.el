@@ -131,5 +131,5 @@
 ;; If it is a better package then to learn how to use it or delete it
 ;; (add-to-list 'load-path "~/.doom.d/.local/color-rg/")
 ;; (require 'color-rg)
-(use-package! color-rg
-  :load-path "~/.doom.d/.local/color-rg")
+;; (use-package! color-rg
+;;   :load-path "~/.doom.d/.local/color-rg")
