@@ -82,9 +82,9 @@
 
 ;; 设置延迟加载，并且如果想要开启两重行号显示则运行linum-mode或者global-linum-mode，只运行一个相对行号就运行linum-relative-mode
 (use-package! linum-relative
+  :defer t
   :init
   (setq linum-relative-backend 'display-line-numbers-mode)
-  :config
   (global-set-key (kbd "<f8>") 'linum-relative-toggle)
   (global-set-key (kbd "<f7>") 'linum-mode)
   )
@@ -98,7 +98,7 @@
         "/tmp/"
         "/ssh:"
         "/sudo:"
-        "/TAGS$"
+         "/TAGS$"
         "/GTAGS$"
         "/GRAGS$"
         "/GPATH$"
@@ -127,6 +127,8 @@
   :config
   (bind-key* "C-c /" #'ace-pinyin-jump-char-2)
   )
+
+(setq-default abbrev-mode t)
 
 ;; If it is a better package then to learn how to use it or delete it
 ;; (add-to-list 'load-path "~/.doom.d/.local/color-rg/")

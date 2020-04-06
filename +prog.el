@@ -1,9 +1,9 @@
 ;;; ~/.doom.d/prog.el -*- lexical-binding: t; -*-
 
-(use-package! lispy
-  :defer t
-  :hook (emacs-lisp-mode . lispy-mode)
-  )
+;; (use-package! lispy
+;;   :defer t
+;;   :hook (emacs-lisp-mode . lispy-mode)
+;;   )
 ;; highlight c
 (defun my-c-mode-font-lock-if0 (limit)
   (save-restriction
@@ -41,7 +41,7 @@
 
 ;; some hooks
 (add-hook 'c-mode-hook 'electric-pair-mode t)
-(add-hook 'emacs-lisp-mode-hook 'lispy-mode t)
+;; (add-hook 'emacs-lisp-mode-hook 'lispy-mode t)
 
 ;; 设置代码折叠
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
@@ -59,7 +59,7 @@
 ;;             ))
 
 (use-package! minimap
-  :defer t
+  :defer 3
   :config
   (define-key prog-mode-map (kbd "C-c mp") 'minimap-mode))
 
@@ -72,6 +72,7 @@
 ;; 将注释替换成evil-nerd-commenter 的替换方式，下面是map!的用法
 
 (use-package! evil-nerd-commenter
+  :defer 2
   :config
   (map! :map prog-mode-map
         :g "M-;" 'evilnc-comment-or-uncomment-lines
@@ -87,6 +88,8 @@
   (advice-add 'describe-function-1 :after #'elisp-demos-advice-describe-function-1)
   (advice-add 'helpful-update :after #'elisp-demos-advice-helpful-update))
 
+(add-hook! prog-mode #'lsp)
+
 ;; 下面是lsp相关的配置，由于没有安装ccls，这里使用clangd
 ;; 在自己的虚拟机上面的clangd的路径，首先熟悉lsp-mode的使用，这里暂时不做其他的配置
 
@@ -94,40 +97,43 @@
 ;;     (setq lsp-clients-clangd-executable "/usr/bin/clangd-9")
 ;;   nil)
 
-(use-package! lsp-mode
-  :defer t
-  :init (setq lsp-keymap-prefix "C-'")
-  :hook (
-         (c-mode . lsp)
-         (c++-mode . lsp)
-         (java-mode . lsp)
-         (perl-mode . lsp)
-         (css-mode . lsp)
-         (lsp-mode . lsp-enable-which-key-integration)
-         )
-  :commands lsp)
+;; (use-package! lsp-mode
+;;   :defer t
+;;   :commands lsp
+;;   :init
+;;   (setq lsp-keymap-prefix "C-'")
+;;   (add-hook! (c-mode c++-mode java-mode perl-mode css-mode) #'lsp)
+;;   ;; :hook (
+;;   ;;        (c-mode . lsp)
+;;   ;;        (c++-mode . lsp)
+;;   ;;        (java-mode . lsp)
+;;   ;;        (perl-mode . lsp)
+;;   ;;        (css-mode . lsp)
+;;   ;;        (lsp-mode . lsp-enable-which-key-integration)
+;;   ;;        )
+;;   )
 
-(use-package! lsp-ui
-  :commands lsp-ui-mode
-  :init
-  (require 'lsp-ui-doc)
-  :hook
-  (
-   (lsp-mode . lsp-ui-mode)
-   (lsp-mode . lsp-ui-doc-mode))
-  )
+;; (with-eval-after-load 'lsp-mode
+;;   (use-package! lsp-ui
+;;     :commands lsp-ui-mode
+;;     :init
+;;     (require 'lsp-ui-doc)
+;;     :hook
+;;     (
+;;      (lsp-mode . lsp-ui-mode)
+;;      (lsp-mode . lsp-ui-doc-mode))
+;;     )
 
-(use-package! company-lsp :commands company-lsp)
+;;   (use-package! company-lsp :commands company-lsp)
 
-(use-package! lsp-ivy :commands lsp-ivy-workspace-symbol)
-(use-package! lsp-treemacs :commands lsp-tremacs-errors-list)
+;;   (use-package! lsp-ivy :commands lsp-ivy-workspace-symbol)
+;;   (use-package! lsp-treemacs :commands lsp-tremacs-errors-list)
 
-(use-package! dap-mode)
+;;   (use-package! dap-mode)
 
-(with-eval-after-load 'lsp-mode
-  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration))
+;;   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
 
-(use-package! lsp-java
-  :defer t
-  :init
-  (add-hook 'java-mode-hook #'lsp))
+;;   (use-package! lsp-java
+;;     :defer t
+;;     :init
+;;     (add-hook 'java-mode-hook #'lsp)))

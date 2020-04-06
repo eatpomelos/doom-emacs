@@ -22,7 +22,7 @@
 
 (global-set-key (kbd "C-c d") 'pomelo|load-localdictionary)
 
-(use-package! org-pomodoro
-  :if (with-eval-after-load 'org-agenda)
-  :config
-  (define-key org-agenda-mode-map (kbd "C-p") 'org-pomodoro))
+;; (use-package! org-pomodoro
+;;   :if (with-eval-after-load 'org-agenda)
+;;   :config
+;;   (define-key org-agenda-mode-map (kbd "C-p") 'org-pomodoro))

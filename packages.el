@@ -69,4 +69,3 @@
 	(package! dap-mode)
 	(package! tiny)
 	(package! ace-pinyin)
-  (package! lsp-java)
