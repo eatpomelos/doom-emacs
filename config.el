@@ -49,3 +49,9 @@
 ;;
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
+(if IS-WINDOWS
+    (progn
+      (setq-default browse-url-temp-dir "~/.local/tmp/")
+      (setq-default temporary-file-directory "~/.local/tmp/")
+      (setq-default mm-tmp-directory "~/.local/tmp/"))
+  nil)

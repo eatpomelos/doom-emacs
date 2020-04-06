@@ -89,7 +89,7 @@
   (advice-add 'helpful-update :after #'elisp-demos-advice-helpful-update))
 
 (add-hook! prog-mode #'lsp)
-
+(setq lsp-keymap-prefix "C-'")
 ;; 下面是lsp相关的配置，由于没有安装ccls，这里使用clangd
 ;; 在自己的虚拟机上面的clangd的路径，首先熟悉lsp-mode的使用，这里暂时不做其他的配置
 
