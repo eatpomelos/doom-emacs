@@ -122,6 +122,7 @@
 
 (use-package! ace-pinyin
   ;; :hook
+  :defer 5
   ;; (prog-mode . ace-pinyin-mode)
   :init (ace-pinyin-global-mode +1)
   :config

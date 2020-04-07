@@ -1,9 +1,5 @@
 ;;; ~/.doom.d/prog.el -*- lexical-binding: t; -*-
 
-;; (use-package! lispy
-;;   :defer t
-;;   :hook (emacs-lisp-mode . lispy-mode)
-;;   )
 ;; highlight c
 (defun my-c-mode-font-lock-if0 (limit)
   (save-restriction
@@ -90,50 +86,3 @@
 
 (add-hook! prog-mode #'lsp)
 (setq lsp-keymap-prefix "C-'")
-;; 下面是lsp相关的配置，由于没有安装ccls，这里使用clangd
-;; 在自己的虚拟机上面的clangd的路径，首先熟悉lsp-mode的使用，这里暂时不做其他的配置
-
-;; (if IS-LINUX
-;;     (setq lsp-clients-clangd-executable "/usr/bin/clangd-9")
-;;   nil)
-
-;; (use-package! lsp-mode
-;;   :defer t
-;;   :commands lsp
-;;   :init
-;;   (setq lsp-keymap-prefix "C-'")
-;;   (add-hook! (c-mode c++-mode java-mode perl-mode css-mode) #'lsp)
-;;   ;; :hook (
-;;   ;;        (c-mode . lsp)
-;;   ;;        (c++-mode . lsp)
-;;   ;;        (java-mode . lsp)
-;;   ;;        (perl-mode . lsp)
-;;   ;;        (css-mode . lsp)
-;;   ;;        (lsp-mode . lsp-enable-which-key-integration)
-;;   ;;        )
-;;   )
-
-;; (with-eval-after-load 'lsp-mode
-;;   (use-package! lsp-ui
-;;     :commands lsp-ui-mode
-;;     :init
-;;     (require 'lsp-ui-doc)
-;;     :hook
-;;     (
-;;      (lsp-mode . lsp-ui-mode)
-;;      (lsp-mode . lsp-ui-doc-mode))
-;;     )
-
-;;   (use-package! company-lsp :commands company-lsp)
-
-;;   (use-package! lsp-ivy :commands lsp-ivy-workspace-symbol)
-;;   (use-package! lsp-treemacs :commands lsp-tremacs-errors-list)
-
-;;   (use-package! dap-mode)
-
-;;   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
-
-;;   (use-package! lsp-java
-;;     :defer t
-;;     :init
-;;     (add-hook 'java-mode-hook #'lsp)))

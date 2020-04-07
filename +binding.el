@@ -1,26 +1,32 @@
 ;;; ~/.doom.d/binding.el -*- lexical-binding: t; -*-
 
-(bind-keys*
- ("<f9>" . loop-alpha)
- ("<f6>" . abbrev-mode)
- ("<f12>" . shell)
- ("C-;" . iedit-mode)
- ("C-s" . swiper)
- ("C-c k" . which-key-show-top-level)
- ("C-l" . recenter-top-bottom))
-;; (bind-key* "C-k" #'kill-line)
-
 (map! (:map override
-        "C-k" 'kill-line))
+        "C-k" 'kill-line
+        "C-c k" 'which-key-show-top-level
+        "C-s" 'swiper
+        "C-l" 'recenter-top-bottom
+        "C-;" 'iedit-mode
+        "<f9>" 'loop-alpha
+        "<f12>" 'shell
+        "<f6>" 'abbrev-mode)
 
-(map! :map prog-mode-map
-      :g "C-c sa" #'hs-show-all
-      :g "C-c ha" #'hs-hide-all
-      :g "C-c sb" #'hs-show-block
-      :g "C-c hb" #'hs-hide-block
-      :i "C-c ," #'company-yasnippet
-      :i "C-r" #'delete-backward-char
-      )
+      (:map prog-mode-map
+        :g "C-c sa" #'hs-show-all
+        :g "C-c ha" #'hs-hide-all
+        :g "C-c sb" #'hs-show-block
+        :g "C-c hb" #'hs-hide-block
+        :i "C-c ," #'company-yasnippet
+        :i "C-r" #'delete-backward-char)
+
+      (:leader
+        "0" 'winum-select-window-0-or-10
+        "1" 'winum-select-window-1
+        "2" 'winum-select-window-2
+        "3" 'winum-select-window-3
+        "4" 'winum-select-window-4
+        "5" 'winum-select-window-5
+        "6" 'winum-select-window-6)
+            )
 
 (global-set-key (kbd "C-c C-/") #'pop-global-mark)
 (global-set-key (kbd "C-c c") 'org-capture)
@@ -52,4 +58,9 @@
       "w-" 'split-window-below
       "bw" 'read-only-mode
       "ft" 'neotree-toggle
+      :nmv "SPC" #'counsel-M-x
+      (:prefix ("f" . "file")
+        "j" #'dired-jump)
+      (:prefix "b"
+        "s" #'doom/switch-to-scratch-buffer)
       )
