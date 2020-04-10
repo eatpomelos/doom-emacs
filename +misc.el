@@ -22,12 +22,12 @@
       :config (edit-server-start))
   nil)
 
-(use-package! neotree
-  :defer t
-  :init
-  (setq inhibit-compacting-font-caches t)
-  (setq neo-theme 'icons)
-  )
+;; (use-package! neotree
+;;   :defer t
+;;   :init
+;;   (setq inhibit-compacting-font-caches t)
+;;   (setq neo-theme 'icons)
+;;   )
 
 (define-abbrev-table 'global-abbrev-table '(
 

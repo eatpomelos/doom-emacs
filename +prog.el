@@ -60,7 +60,7 @@
   (define-key prog-mode-map (kbd "C-c mp") 'minimap-mode))
 
 (use-package! vc-msg
-  :defer 2
+  :defer 5
   :config
   (global-set-key (kbd "C-c mi") 'vc-msg-show)
   (define-leader-key! "dm" 'vc-msg-show))
@@ -68,7 +68,7 @@
 ;; 将注释替换成evil-nerd-commenter 的替换方式，下面是map!的用法
 
 (use-package! evil-nerd-commenter
-  :defer 2
+  :defer 5
   :config
   (map! :map prog-mode-map
         :g "M-;" 'evilnc-comment-or-uncomment-lines
