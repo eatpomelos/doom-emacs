@@ -86,3 +86,7 @@
 
 (add-hook! prog-mode #'lsp)
 (setq lsp-keymap-prefix "C-'")
+
+(with-eval-after-load 'lsp-mode
+  (add-hook! lsp-mode #'lsp-enable-which-key-integration)
+  )
