@@ -16,6 +16,9 @@
     (("gnu" . "http://elpa.emacs-china.org/gnu/")
      ("melpa" . "http://elpa.emacs-china.org/melpa/")
      ("org" . "http://elpa.emacs-china.org/org/"))))
+ '(pyim-dicts
+   (quote
+    ((:name "local-dict" :file "/home/pomeloly/.doom.d/local/pyim-bigdict.pyim"))))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(which-key-idle-delay 0.2))
