@@ -22,7 +22,9 @@
        company           ; the ultimate code completion backend
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
-       ivy               ; a search engine for love and life
+       (ivy
+        +icons
+        +prescient)               ; a search engine for love and life
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -46,7 +48,8 @@
        ;;unicode           ; extended unicode support for various languages
        vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
-       window-select     ; visually switch windows
+       (window-select
+        +numbers)     ; visually switch windows
        workspaces        ; tab emulation, persistence & separate workspaces
        ;; zen               ; distraction-free coding or writing
 

@@ -27,7 +27,7 @@
         "4" 'winum-select-window-4
         "5" 'winum-select-window-5
         "6" 'winum-select-window-6)
-            )
+      )
 
 (global-set-key (kbd "C-c C-/") #'pop-global-mark)
 (global-set-key (kbd "C-c c") 'org-capture)
