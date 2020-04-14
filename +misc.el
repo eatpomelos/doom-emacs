@@ -132,3 +132,6 @@
 (setq-default abbrev-mode t)
 
 ;; If it is a better package then to learn how to use it or delete it
+;; (use-package rime
+;;   :custom
+;;   (default-input-method "rime"))

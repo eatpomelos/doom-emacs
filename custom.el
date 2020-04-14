@@ -16,6 +16,7 @@
     (("gnu" . "http://elpa.emacs-china.org/gnu/")
      ("melpa" . "http://elpa.emacs-china.org/melpa/")
      ("org" . "http://elpa.emacs-china.org/org/"))))
+ '(package-selected-packages (quote (rime)))
  '(pyim-dicts
    (quote
     ((:name "local-dict" :file "/home/pomeloly/.doom.d/local/pyim-bigdict.pyim"))))
