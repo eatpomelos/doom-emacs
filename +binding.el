@@ -9,7 +9,7 @@
         "<f9>" 'loop-alpha
         "<f12>" 'shell
         "<f6>" 'abbrev-mode
-        "C-c z" 'pyim-toggle-input-ascii)
+        "C-\\" 'pyim-toggle-input-ascii)
 
       (:map prog-mode-map
         :g "C-c sa" #'hs-show-all

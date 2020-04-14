@@ -9,6 +9,7 @@
  '(custom-safe-themes
    (quote
     ("0acecfb9122ccb3221a389c4da3dc4103e7ad203074ae241d4fca524102e9a82" default)))
+ '(default-input-method "rime")
  '(display-time-mode t)
  '(neo-window-position (quote left))
  '(package-archives
@@ -16,7 +17,7 @@
     (("gnu" . "http://elpa.emacs-china.org/gnu/")
      ("melpa" . "http://elpa.emacs-china.org/melpa/")
      ("org" . "http://elpa.emacs-china.org/org/"))))
- '(package-selected-packages (quote (rime)))
+ '(package-selected-packages (quote (posframe rime)))
  '(pyim-dicts
    (quote
     ((:name "local-dict" :file "/home/pomeloly/.doom.d/local/pyim-bigdict.pyim"))))
