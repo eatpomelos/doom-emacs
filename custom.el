@@ -20,7 +20,16 @@
  '(package-selected-packages (quote (posframe rime)))
  '(pyim-dicts
    (quote
-    ((:name "local-dict" :file "/home/pomeloly/.doom.d/local/pyim-bigdict.pyim"))))
+    ((:name "greate" :file "/home/pomeloly/.doom.d/local/pyim-greatdict.pyim")
+     (:name "sogou" :file "/home/pomeloly/.doom.d/local/SogouCellWordLib.pyim")
+     (:name "local-dict" :file "/home/pomeloly/.doom.d/local/pyim-bigdict.pyim")
+     (:name "daily" :file "/home/pomeloly/.doom.d/local/Daily.pyim")
+     (:name "word" :file "/home/pomeloly/.doom.d/local/words.pyim")
+     (:name "math" :file "/home/pomeloly/.doom.d/local/Math-Physics.pyim")
+     (:name "million" :file "/home/pomeloly/.doom.d/local/million.pyim")
+     (:name "useful" :file "/home/pomeloly/.doom.d/local/Useful.pyim")
+     (:name "cs" :file "/home/pomeloly/.doom.d/local/CS.pyim")
+     (:name "electronics" :file "/home/pomeloly/.doom.d/local/Electronics.pyim"))))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(which-key-idle-delay 0.2))

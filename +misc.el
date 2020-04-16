@@ -132,12 +132,3 @@
 (setq-default abbrev-mode t)
 
 ;; If it is a better package then to learn how to use it or delete it
-(if IS-LINUX
-    (with-eval-after-load 'pyim
-      (setq default-input-method "pyim")
-      (setq pyim-default-scheme 'rime-quanpin)
-      (use-package! posframe
-        :ensure t
-        :init
-        (setq pyim-page-tooltip 'posframe)))
-  nil)
