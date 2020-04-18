@@ -89,4 +89,6 @@
 
 (with-eval-after-load 'lsp-mode
   (add-hook! lsp-mode #'lsp-enable-which-key-integration)
+  (setq android-mode-sdk-dir "/mnt/d/ly/AppData/Sdk/")
+  (setq android-mode-avd "MY_AVD")
   )
