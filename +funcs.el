@@ -86,3 +86,18 @@ NO-TEMPLATE is non-nil."
 (defadvice tiny-expand (after pomelo-tiny-expand-hack activate)
   (pomelo/indent-buffer)
   )
+
+;; ;; 让company-yasnippet只在.之前工作
+;; (defun company-yasnippet/disable-after-dot (fun command &optional arg &rest _ignore)
+;;   (if (eq command 'prefix)
+;;       (let ((prefix (funcall fun 'prefix)))
+;;         (when (and prefix (not
+;;                            (eq
+;;                             (char-before (- (point) (length prefix)))
+;;                             ?.)))
+;;           prefix))
+;;     (funcall fun command arg)))
+;; (advice-add #'company-yasnippet :around #'company-yasnippet/disable-after-dot)
+
+(defadvice org-agenda (after pomelo-agenda-view-hack activate)
+  (org-agenda-day-view))

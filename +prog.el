@@ -84,11 +84,17 @@
   (advice-add 'describe-function-1 :after #'elisp-demos-advice-describe-function-1)
   (advice-add 'helpful-update :after #'elisp-demos-advice-helpful-update))
 
+;; (add-hook! (java-mode js2-mode) #'lsp)
 (add-hook! prog-mode #'lsp)
 (setq lsp-keymap-prefix "C-'")
 
 (with-eval-after-load 'lsp-mode
   (add-hook! lsp-mode #'lsp-enable-which-key-integration)
+  (setq flycheck-check-syntax-automatically '(mode-enabled))
   (setq android-mode-sdk-dir "/mnt/d/ly/AppData/Sdk/")
   (setq android-mode-avd "MY_AVD")
   )
+
+;; (add-hook 'prog-mode-hook '(lambda () (setq company-backends
+;;                                  '((company-lsp :with company-yasnippet) company-keywords company-files company-capf
+;;                                   (company-dabbrev-code company-etags company-gtags)))))

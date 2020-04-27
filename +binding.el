@@ -27,6 +27,8 @@
         "4" 'winum-select-window-4
         "5" 'winum-select-window-5
         "6" 'winum-select-window-6)
+      (:map c-mode-map
+        "DEL" 'c-hungry-delete)
       )
 
 (global-set-key (kbd "C-c C-/") #'pop-global-mark)
