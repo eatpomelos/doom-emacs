@@ -132,3 +132,23 @@
 (setq-default abbrev-mode t)
 
 ;; If it is a better package then to learn how to use it or delete it
+
+;; snails config
+;; (def-package! snails
+  ;; :after)
+;; (def-package! snails
+  ;; :after (doom-themes)
+  ;; :load-path "~/.doom.d/local/elpa/snails/"
+  ;; :config
+  ;; (require 'snails)
+  ;; (defun snails3()
+  ;;   (interactive)
+  ;;   (snails '(snails-backend-awesome-tab-group
+  ;; 	          snails-backend-buffer
+  ;; 	          snails-backend-recentf)))
+  ;; (add-hook 'snails-mode-hook (lambda () (evil-emacs-state)))
+  ;; (global-set-key (kbd "C-S-p") 'snails3)
+  ;; )
+;; (add-to-list 'load-path "~/.doom.d/local/elpa/snails")
+;; (require 'snails)
+(global-set-key (kbd "<f3>") 'counsel-load-theme)

@@ -101,3 +101,19 @@ NO-TEMPLATE is non-nil."
 
 (defadvice org-agenda (after pomelo-agenda-view-hack activate)
   (org-agenda-day-view))
+
+(defadvice evilnc-comment-or-uncomment-lines (after pomelo-next-line-hack activate)
+  (evil-next-line))
+
+;; toggle my favorite theme
+(defun pomelo-toggle-theme ()
+  "Toggle theme in."
+  (interactive)
+  (let ((now-theme doom-theme)
+        (toogle-theme))
+    (setq toogle-theme (cond ((equal now-theme 'doom-dracula) 'doom-nord-light)
+                             ((equal now-theme 'doom-nord-light) 'doom-dracula))
+          )
+    (load-theme toogle-theme)
+    )
+  )

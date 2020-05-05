@@ -34,6 +34,7 @@
 (global-set-key (kbd "C-c C-/") #'pop-global-mark)
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "<f3>") 'pomelo-toggle-theme)
 
 ;; 编辑相关的快捷键
 (global-set-key (kbd "C-c v") 'set-mark-command)
