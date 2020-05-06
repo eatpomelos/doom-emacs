@@ -3,13 +3,6 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; refresh' after modifying this file!
 
-(load! "+funcs")
-(load! "+ui")
-(load! "+misc")
-(load! "+prog")
-(load! "+binding")
-(load! "+org")
-
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
@@ -24,7 +17,8 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. These are the defaults.
-(setq doom-theme 'doom-dracula)
+
+(setq doom-theme 'doom-nord-light)
 
 ;; If you intend to use org, it is recommended you change this!
 (setq org-directory "~/pomelo/agenda")
@@ -55,3 +49,10 @@
       (setq-default temporary-file-directory "~/.local/tmp/")
       (setq-default mm-tmp-directory "~/.local/tmp/"))
   nil)
+
+(load! "+ui")
+(load! "+misc")
+(load! "+prog")
+(load! "+org")
+(load! "+funcs")
+(load! "+binding")

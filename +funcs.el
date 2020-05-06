@@ -110,10 +110,10 @@ NO-TEMPLATE is non-nil."
   "Toggle theme in."
   (interactive)
   (let ((now-theme doom-theme)
-        (toogle-theme))
-    (setq toogle-theme (cond ((equal now-theme 'doom-dracula) 'doom-nord-light)
+        (toggle-theme))
+    (setq toggle-theme (cond ((equal now-theme 'doom-dracula) 'doom-nord-light)
                              ((equal now-theme 'doom-nord-light) 'doom-dracula))
           )
-    (load-theme toogle-theme)
+    (load-theme toggle-theme)
     )
   )
