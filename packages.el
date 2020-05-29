@@ -63,7 +63,7 @@
 	;; (package! winum)
 	(package! evil-nerd-commenter)
 	(package! linum-relative)
-	(package! bongo)
+	;; (package! bongo)
 	(package! nyan-mode)
 	(package! elisp-demos)
 	(package! dap-mode)

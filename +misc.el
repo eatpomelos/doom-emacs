@@ -117,8 +117,8 @@
         "/autosave"
         "\\.doom\\.d/"))
 
-(use-package! bongo
-  :defer t)
+;; (use-package! bongo
+;;   :defer t)
 
 (use-package! ace-pinyin
   ;; :hook
