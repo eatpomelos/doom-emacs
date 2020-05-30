@@ -85,7 +85,15 @@
   (advice-add 'helpful-update :after #'elisp-demos-advice-helpful-update))
 
 ;; (add-hook! (java-mode js2-mode) #'lsp)
-(add-hook! prog-mode #'lsp)
+;; (add-hook! prog-mode #'lsp)
+
+(setq pomelo-enable-lsp-alist '(java-mode
+                                c-mode
+                                android-mode
+                                c++-mode))
+
+(add-hook! pomelo-enable-lsp-alist #'lsp)
+
 (setq lsp-keymap-prefix "C-'")
 
 (with-eval-after-load 'lsp-mode
