@@ -69,3 +69,4 @@
 	(package! dap-mode)
 	(package! tiny)
 	(package! ace-pinyin)
+	(package! calibredb)

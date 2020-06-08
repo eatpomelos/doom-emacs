@@ -10,6 +10,7 @@
        "<f12>" 'shell
        "<f6>" 'abbrev-mode
        ;; "C-\\" 'pyim-toggle-input-ascii
+       "<f2>" 'pomelo-toggle-deft
        )
 
       (:map prog-mode-map

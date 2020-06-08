@@ -50,6 +50,9 @@
       (setq-default mm-tmp-directory "~/.local/tmp/"))
   nil)
 
+;; some directories
+(setq deft-directory "~/pomelo/notes")
+
 (load! "+ui")
 (load! "+misc")
 (load! "+prog")

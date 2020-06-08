@@ -13,11 +13,13 @@
     (setq alpha-list (cdr (append alpha-list (list h))))
     )
   )
-;; 当打开一个大的文件的时候使用另外的模式提升性能
+;; 当打开一个大的文件的时候使用另外的模式提升性能,但是使用ｅｍａｃｓ来阅读ｐｄｆ的时候不需要打开使用此配置，之后如果有其他的需求的话可以考虑建立一个表
 (defun pomelo/check-large-file ()
   (when (> (buffer-size) 500000)
-    (progn (fundamental-mode)
-           (hl-line-mode -1))))
+    (if (string-match ".+\\.pdf" (buffer-name))
+      nil
+      (progn (fundamental-mode)
+             (hl-line-mode -1)))))
 
 (defun occur-dwim ()
   "Call `occur' with a sane default."
@@ -115,5 +117,16 @@ NO-TEMPLATE is non-nil."
                              ((equal now-theme 'doom-nord-light) 'doom-dracula))
           )
     (load-theme toggle-theme)
+    )
+  )
+
+;; toggle deft-mode
+(defun pomelo-toggle-deft ()
+  (interactive)
+  (let ((now-mode major-mode))
+    (if (eq now-mode 'deft-mode)
+        (quit-window)
+      (deft)
+      )
     )
   )

@@ -2,7 +2,7 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "pomeloly"
+(setq user-full-name "eatpomelos"
       user-mail-address "2845748931@qq.com")
 
 (setq company-idle-delay 0.1)
@@ -71,6 +71,7 @@
 
 (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit)
 
+;; 这里一行是为了增加大文件打开的速度来提升性能，但是由于打开ｐｄｆ的时候不需要启用其他ｍｏｄｅ，这里进行更改
 (add-hook 'find-file-hook 'pomelo/check-large-file)
 
 (setq ispell-dictionary "american")
@@ -151,4 +152,17 @@
   ;; )
 ;; (add-to-list 'load-path "~/.doom.d/local/elpa/snails")
 ;; (require 'snails)
-(global-set-key (kbd "<f3>") 'counsel-load-theme)
+
+;; auto-mode-alist
+;; (pdf-loader-install)
+(add-to-list 'auto-mode-alist '("\\.pdf\\'" . pdf-view-mode))
+
+(use-package! calibredb
+  :defer 2
+  :init
+  (setq sql-sqlite-program "/usr/bin/sqlite3")
+  (setq calibredb-root-dir "~/Calibre-Book")
+  (setq calibredb-db-dir (expand-file-name "metadata.bd" calibredb-root-dir))
+  (setq calibredb-program "/usr/bin/calibredb")
+  (setq calibredb-library-alist '(("~/EBOOK")))
+  )
