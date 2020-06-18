@@ -5,7 +5,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
-   ["#E5E9F0" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#bbc2cf"])
+   ["#282a36" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#bbc2cf"])
  '(blink-cursor-mode nil)
  '(column-number-mode t)
  '(company-minimum-prefix-length 1)
@@ -69,4 +69,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Source Code Pro" :foundry "ADBO" :slant italic :weight semi-bold :height 120 :width normal)))))
+ '(default ((t (:family "Source Code Pro" :foundry "ADBO" :slant italic :weight normal :height 120 :width normal))))
+ '(mode-line ((t (:family "Source Code Pro" :height 0.9))))
+ '(mode-line-inactive ((t (:family "Source Code Pro" :height 0.9)))))

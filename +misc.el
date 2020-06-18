@@ -99,7 +99,7 @@
         "/tmp/"
         "/ssh:"
         "/sudo:"
-         "/TAGS$"
+        "/TAGS$"
         "/GTAGS$"
         "/GRAGS$"
         "/GPATH$"
@@ -164,5 +164,22 @@
   (setq calibredb-root-dir "~/Calibre-Book")
   (setq calibredb-db-dir (expand-file-name "metadata.bd" calibredb-root-dir))
   (setq calibredb-program "/usr/bin/calibredb")
-  (setq calibredb-library-alist '(("~/EBOOK")))
+  (setq calibredb-library-alist '(("~/EBOOK")
+                                  ("~/EBOOK/哲学")
+                                  ("~/EBOOK/算法")
+                                  ("~/EBOOK/入门类")
+                                  ("~/EBOOK/books")
+                                  ("~/EBOOK/其他电子书")
+                                  ("~/EBOOK/编程工具书类")
+                                  ("~/EBOOK/C语言相关书籍")
+                                  ("~/EBOOK/emacs相关")
+                                  ))
+  (defadvice calibredb (after pomelo-calibrebd-hack activate)
+    (evil-emacs-state))
+  :config
   )
+
+(progn
+  (load-file "~/.doom.d/local/packages/rainbow-fart.el/rainbow-fart.el")
+  (rainbow-fart-mode 1))
+

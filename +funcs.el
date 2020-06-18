@@ -120,13 +120,43 @@ NO-TEMPLATE is non-nil."
     )
   )
 
-;; toggle deft-mode
-(defun pomelo-toggle-deft ()
+;; 删除一个完整的段落
+(defun evilnc--get-one-paragraph-region ()
+  "Select a paragraph which has NO empty line."
+  (let* ((b (save-excursion
+              (cond
+               ((re-search-backward "^[\n\t]*$" nil t)
+                (forward-line)
+                (line-beginning-position))
+               (t
+                1))))
+         (e (save-excursion
+              (cond
+               ((re-search-forward "^[\n\t]*$" nil t)
+                (forward-line -1)
+                (line-end-position))
+               (t
+                (point-max))))))
+    (list b e)))
+
+;; 
+(defun pomelo-kill-paragraphs ()
+  "kill a paragaphs."
   (interactive)
-  (let ((now-mode major-mode))
-    (if (eq now-mode 'deft-mode)
-        (quit-window)
-      (deft)
-      )
-    )
+  (let ((b (point-max))
+        rlt
+        (e (point-min)))
+    (setq rlt (evilnc--get-one-paragraph-region))
+    (setq b (nth 0 rlt))
+    (setq e (nth 1 rlt))
+    (kill-region b e))
+  (while (pomelo--empty-line-p)
+    (kill-line))
   )
+
+(defun pomelo--empty-line-p ()
+  "Test whether the point is on an \"empty\" line."
+  (if (and (looking-back "^[[:space:]]*" (line-beginning-position))
+           (looking-at "[[:space:]]*$"))
+      t
+    nil))
