@@ -54,7 +54,7 @@
 (setq deft-directory "~/pomelo/notes/")
 
 ;; local paclages path
-(defvar pomelo-local-packages-dir "~/.doom.d/local/packages/")
+(defvar pomelo-local-packages-dir (concat pomelo-doom-config-dir "/local/packages/"))
 
 (load! "+ui")
 (load! "+misc")

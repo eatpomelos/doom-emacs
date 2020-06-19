@@ -116,7 +116,8 @@
         "init\\.el$"
         "/agenda/"
         "/autosave"
-        "\\.doom\\.d/"))
+        ;; "\\.doom\\.d/"
+        ))
 
 ;; (use-package! bongo
 ;;   :defer t)
@@ -176,10 +177,12 @@
                                   ))
   (defadvice calibredb (after pomelo-calibrebd-hack activate)
     (evil-emacs-state))
-  :config
   )
 
-(progn
-  (load-file "~/.doom.d/local/packages/rainbow-fart.el/rainbow-fart.el")
-  (rainbow-fart-mode 1))
-
+(use-package! rainbow-fart
+  :load-path "~/.doom.d/local/packages/rainbow-fart.el"
+  :defer 3
+  :config
+  (global-set-key (kbd "C-c mr") 'rainbow-fart-mode)
+  (rainbow-fart-mode 1)
+  )

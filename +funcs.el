@@ -139,7 +139,6 @@ NO-TEMPLATE is non-nil."
                 (point-max))))))
     (list b e)))
 
-;; 
 (defun pomelo-kill-paragraphs ()
   "kill a paragaphs."
   (interactive)
