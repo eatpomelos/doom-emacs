@@ -21,7 +21,7 @@
 (setq doom-theme 'doom-dracula)
 
 ;; If you intend to use org, it is recommended you change this!
-(setq org-directory "~/pomelo/agenda")
+(setq org-directory "~/pomelo/org/")
 
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
@@ -51,10 +51,13 @@
   nil)
 
 ;; some directories
-(setq deft-directory "~/pomelo/notes/")
+(setq deft-directory "~/pomelo/org/notes/")
 
 ;; local paclages path
 (defvar pomelo-local-packages-dir (concat pomelo-doom-config-dir "/local/packages/"))
+
+;; 下面的是为了解决之前输入中文卡顿的原因
+(set-language-environment 'utf-8)
 
 (load! "+ui")
 (load! "+misc")

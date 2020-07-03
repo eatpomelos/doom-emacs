@@ -8,6 +8,7 @@
        "C-;" 'iedit-mode
        "<f9>" 'loop-alpha
        "<f12>" 'shell
+       "<f2>" 'org-agenda
        "<f6>" 'abbrev-mode
        )
 
@@ -36,6 +37,7 @@
        :i "C-e" #'org-end-of-line
        :i "C-k" #'kill-line
        :i "C-l" #'recenter-top-bottom)
+
       )
 
 (global-set-key (kbd "C-c C-/") #'pop-global-mark)

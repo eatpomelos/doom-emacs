@@ -186,3 +186,5 @@
   (global-set-key (kbd "C-c mr") 'rainbow-fart-mode)
   (rainbow-fart-mode 1)
   )
+
+;; (setq calendar-chinese-all-holidays-flag t)
