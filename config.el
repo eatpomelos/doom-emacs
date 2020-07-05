@@ -56,7 +56,7 @@
 ;; local paclages path
 (defvar pomelo-local-packages-dir (concat pomelo-doom-config-dir "/local/packages/"))
 
-;; 下面的是为了解决之前输入中文卡顿的原因
+;; 下面的是为了解决之前输入中文卡顿的原因，同时也解决了一些字显示的问题。
 (set-language-environment 'utf-8)
 
 (load! "+ui")

@@ -72,3 +72,4 @@
  '(default ((t (:family "Source Code Pro" :foundry "ADBO" :slant italic :weight normal :height 120 :width normal))))
  '(mode-line ((t (:family "Source Code Pro" :height 0.9))))
  '(mode-line-inactive ((t (:family "Source Code Pro" :height 0.9)))))
+(put 'narrow-to-region 'disabled nil)

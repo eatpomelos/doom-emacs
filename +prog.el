@@ -68,7 +68,7 @@
 ;; 将注释替换成evil-nerd-commenter 的替换方式，下面是map!的用法
 
 (use-package! evil-nerd-commenter
-  :defer 5
+  :defer 3
   :config
   (map! :map prog-mode-map
         :g "M-;" 'evilnc-comment-or-uncomment-lines
@@ -92,7 +92,7 @@
                                 android-mode
                                 c++-mode))
 
-(add-hook! pomelo-enable-lsp-alist #'lsp)
+(add-hook! (java-mode c-mode android-mode c++-mode) #'lsp!)
 
 (setq lsp-keymap-prefix "C-'")
 

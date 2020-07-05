@@ -12,8 +12,15 @@
 (use-package! youdao-dictionary
   :defer t
   :init
-  (define-leader-key! "oy" 'youdao-dictionary-search-at-point+)
-  (define-leader-key! "os" 'youdao-dictionary-play-voice-at-point)
+  (map!
+   (:leader
+    (:prefix ("y" . "youdao")
+     "o" #'youdao-dictionary-search-at-point+
+     "s" #'youdao-dictionary-search-and-replace
+     "p" #'youdao-dictionary-play-voice-at-point
+     "i" #'youdao-dictionary-search-from-input
+     )
+    ))
   )
 
 (if IS-WINDOWS
@@ -187,4 +194,15 @@
   (rainbow-fart-mode 1)
   )
 
+
 ;; (setq calendar-chinese-all-holidays-flag t)
+;; emacs 应用框架 在linux下能够在emacs中运行所有的程序，暂时试用了一下，没有必要，不安装这个也行
+(use-package! eaf
+  :load-path "~/.doom.d/local/packages/emacs-application-framework"
+  :defer 2
+  :custom
+  (eaf-find-alternate-file-in-dired t)
+  :config
+  (eaf-bind-key scroll_up "C-n" eaf-pdf-viewer-keybinding)
+  (eaf-bind-key scroll_down "C-p" eaf-pdf-viewer-keybinding)
+  (eaf-bind-key take_photo "p" eaf-camera-keybinding))
