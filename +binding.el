@@ -37,7 +37,6 @@
        :i "C-e" #'org-end-of-line
        :i "C-k" #'kill-line
        :i "C-l" #'recenter-top-bottom)
-
       )
 
 (global-set-key (kbd "C-c C-/") #'pop-global-mark)

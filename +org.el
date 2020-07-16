@@ -103,4 +103,15 @@
            :prepend t)
           ))
 
+  ;; 在org中运行一些其他语言的程序，暂时设置一个快捷键，之后会再次进行更改
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+     (C . t)
+     (perl . t)
+     (shell . t)
+     (latex . t)
+     (python . t)
+     (js . t)
+     ))
   )

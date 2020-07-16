@@ -20,9 +20,11 @@
      "p" #'youdao-dictionary-play-voice-at-point
      "i" #'youdao-dictionary-search-from-input
      )
-    ))
-  )
+    )
+   (:map override
+    "<f4>" #'youdao-dictionary-search-at-point+)))
 
+;; 当当前的系统是windows的时候需要设置edit-server，但是其实这个功能没有必要加进自己的配置中，平时很少用到
 (if IS-WINDOWS
     (use-package! edit-server
       :ensure t
@@ -123,7 +125,7 @@
         "init\\.el$"
         "/agenda/"
         "/autosave"
-        ;; "\\.doom\\.d/"
+        "\\.doom\\.d/"
         ))
 
 ;; (use-package! bongo
@@ -206,3 +208,34 @@
   (eaf-bind-key scroll_up "C-n" eaf-pdf-viewer-keybinding)
   (eaf-bind-key scroll_down "C-p" eaf-pdf-viewer-keybinding)
   (eaf-bind-key take_photo "p" eaf-camera-keybinding))
+
+(use-package! smart-input-source
+  :init
+  ;; set the english input source
+  ;;(setq-default smart-input-source-english "com.apple.keylayout.ABC")
+  (require 'subr-x)
+  (setq-default smart-input-source-english "1")
+  ;; set the default other language input source for all buffer
+  (setq-default smart-input-source-other "2")
+  (setq-default smart-input-source-do-get
+                (lambda () (string-trim (shell-command-to-string "fcitx-remote"))))
+  (setq-default smart-input-source-do-set
+                (lambda (source)
+                  (pcase source
+                    ("1" (start-process "set-input-source" nil "fcitx-remote" "-c"))
+                    ("2" (start-process "set-input-source" nil "fcitx-remote" "-o")))))
+
+  :hook
+  ;; enable the /follow context/ and /inline region/ mode for specific buffers
+  (((text-mode prog-mode) . smart-input-source-follow-context-mode)
+   ((text-mode prog-mode) . smart-input-source-inline-mode))
+
+  :config
+  ;; enable the /cursor color/ mode
+  (smart-input-source-global-cursor-color-mode t)
+  ;; enable the /respect/ mode
+  (smart-input-source-global-respect-mode t)
+  ;; enable the /follow context/ mode for all buffers
+  (smart-input-source-global-follow-context-mode t)
+  ;; enable the /inline english/ mode for all buffers
+  (smart-input-source-global-inline-mode t))
