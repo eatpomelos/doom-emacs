@@ -209,6 +209,7 @@
   (eaf-bind-key scroll_down "C-p" eaf-pdf-viewer-keybinding)
   (eaf-bind-key take_photo "p" eaf-camera-keybinding))
 
+;; smart-input-source 的配置
 (use-package! smart-input-source
   :init
   ;; set the english input source
