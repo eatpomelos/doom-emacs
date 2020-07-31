@@ -87,10 +87,10 @@
 ;; (add-hook! (java-mode js2-mode) #'lsp)
 ;; (add-hook! prog-mode #'lsp)
 
-(setq pomelo-enable-lsp-alist '(java-mode
-                                c-mode
-                                android-mode
-                                c++-mode))
+;; (setq pomelo-enable-lsp-alist '(java-mode
+;;                                 c-mode
+;;                                 android-mode
+;;                                 c++-mode))
 
 (add-hook! (java-mode c-mode android-mode c++-mode) #'lsp!)
 
@@ -106,3 +106,4 @@
 ;; (add-hook 'prog-mode-hook '(lambda () (setq company-backends
 ;;                                  '((company-lsp :with company-yasnippet) company-keywords company-files company-capf
 ;;                                   (company-dabbrev-code company-etags company-gtags)))))
+

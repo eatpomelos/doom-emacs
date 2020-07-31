@@ -10,14 +10,13 @@
        (set-frame-parameter (selected-frame) 'alpha (list a ab))
        (add-to-list 'default-frame-alist (cons 'alpha (list a ab)))
        ) (car h) (car (cdr h)))
-    (setq alpha-list (cdr (append alpha-list (list h))))
-    )
-  )
+    (setq alpha-list (cdr (append alpha-list (list h))))))
+
 ;; 当打开一个大的文件的时候使用另外的模式提升性能,但是使用ｅｍａｃｓ来阅读ｐｄｆ的时候不需要打开使用此配置，之后如果有其他的需求的话可以考虑建立一个表
 (defun pomelo/check-large-file ()
   (when (> (buffer-size) 500000)
     (if (string-match ".+\\.pdf" (buffer-name))
-      nil
+        nil
       (progn (fundamental-mode)
              (hl-line-mode -1)))))
 
@@ -86,8 +85,7 @@ NO-TEMPLATE is non-nil."
 
 ;; when tiny expand finished indent this buffer
 (defadvice tiny-expand (after pomelo-tiny-expand-hack activate)
-  (pomelo/indent-buffer)
-  )
+  (pomelo/indent-buffer))
 
 ;; ;; 让company-yasnippet只在.之前工作
 ;; (defun company-yasnippet/disable-after-dot (fun command &optional arg &rest _ignore)
@@ -117,9 +115,7 @@ NO-TEMPLATE is non-nil."
                              ((equal now-theme 'doom-nord-light) 'doom-dracula)
                              (t 'doom-dracula))
           )
-    (load-theme toggle-theme)
-    )
-  )
+    (load-theme toggle-theme)))
 
 ;; 删除一个完整的段落
 (defun evilnc--get-one-paragraph-region ()
@@ -151,8 +147,7 @@ NO-TEMPLATE is non-nil."
     (setq e (nth 1 rlt))
     (kill-region b e))
   (while (pomelo--empty-line-p)
-    (kill-line))
-  )
+    (kill-line)))
 
 (defun pomelo--empty-line-p ()
   "Test whether the point is on an \"empty\" line."

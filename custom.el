@@ -24,7 +24,8 @@
    '(("gnu" . "http://elpa.emacs-china.org/gnu/")
      ("melpa" . "http://elpa.emacs-china.org/melpa/")
      ("org" . "http://elpa.emacs-china.org/org/")))
- '(package-selected-packages '(smart-input-source cyberpunk-theme posframe rime))
+ '(package-selected-packages
+   '(grip-mode smart-input-source cyberpunk-theme posframe rime))
  '(pdf-view-midnight-colors (cons "#bbc2cf" "#282c34"))
  '(pyim-dicts
    '((:name "greate" :file "/home/pomeloly/.doom.d/local/pyim-greatdict.pyim")

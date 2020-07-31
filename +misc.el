@@ -69,9 +69,9 @@
                                             ("7space" "https://github.com/syl20bnr/spacemacs/")
                                             ("7ec" "https://emacs-china.org/")
                                             ("7pur" "https://github.com/purcell/emacs.d")
+                                            ("7pme" "https://github.com/eatpomelos/doom-emacs")
 
                                             ;; signature
-                                            ("7pme" "pomelo")
                                             ("7zl" "zilongshanren")
                                             ;; emacs regex
                                             ("7d" "\\([0-9]+?\\)")
@@ -185,16 +185,15 @@
                                   ("~/EBOOK/emacs相关")
                                   ))
   (defadvice calibredb (after pomelo-calibrebd-hack activate)
-    (evil-emacs-state))
-  )
+    (evil-emacs-state)))
 
-(use-package! rainbow-fart
-  :load-path "~/.doom.d/local/packages/rainbow-fart.el"
-  :defer 3
-  :config
-  (global-set-key (kbd "C-c mr") 'rainbow-fart-mode)
-  (rainbow-fart-mode 1)
-  )
+;; (use-package! rainbow-fart
+;;   :load-path "~/.doom.d/local/packages/rainbow-fart.el"
+;;   :defer 3
+;;   :config
+;;   (global-set-key (kbd "C-c mr") 'rainbow-fart-mode)
+;;   (rainbow-fart-mode 1)
+;;   )
 
 
 ;; (setq calendar-chinese-all-holidays-flag t)

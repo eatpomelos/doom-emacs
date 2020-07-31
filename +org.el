@@ -115,3 +115,10 @@
      (js . t)
      ))
   )
+
+(use-package! grip-mode
+  :defer 3
+  :ensure t
+  ;; :bind (:map markdown-mode-command-map
+         ;; ("g" . grip-mode))
+  )
