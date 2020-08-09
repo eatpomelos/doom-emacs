@@ -208,6 +208,17 @@
   (eaf-bind-key scroll_down "C-p" eaf-pdf-viewer-keybinding)
   (eaf-bind-key take_photo "p" eaf-camera-keybinding))
 
+;;english company helper
+(use-package! company-english-helper
+  :load-path "~/.doom.d/local/packages/company-english-helper"
+  :defer 2
+  :init
+  (setq company-english-helper-fuzz-search-p t)
+  :config
+  (add-hook! org-mode #'toggle-company-english-helper)
+  (global-set-key (kbd "<f1>") 'toggle-company-english-helper)
+  )
+
 ;; smart-input-source 的配置
 (use-package! smart-input-source
   :init
