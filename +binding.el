@@ -10,6 +10,7 @@
        "<f12>" 'shell
        "<f2>" 'org-agenda
        "<f6>" 'abbrev-mode
+       "<f5>" 'revert-buffer-with-coding-system
        )
 
       (:map prog-mode-map
