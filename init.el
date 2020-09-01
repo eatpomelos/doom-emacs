@@ -19,7 +19,7 @@
        ;;japanese
 
        :completion
-       company ; the ultimate code completion backend
+       (company +childframe) ; the ultimate code completion backend
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        (ivy
@@ -150,13 +150,13 @@
         +pandoc          ; export-with-pandoc support
         +pomodoro       ; be fruitful with the tomato technique
         +present)       ; using org-mode for presentations
-       perl             ; write code no one else can comprehend
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
        ;;python            ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
        ;; racket            ; a DSL for DSLs
+       raku             ; replace perl
        ;;rest              ; Emacs as a REST client
        ;;rst               ; ReST in peace
        ;;ruby              ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
