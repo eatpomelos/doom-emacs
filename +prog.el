@@ -103,7 +103,22 @@
   (setq android-mode-avd "MY_AVD")
   )
 
+;;配置ccls用于工作的开发，使用自己的笔记本来完成工作
+(with-eval-after-load 'projectile
+  (setq projectile-project-root-files-top-down-recurring
+        (append '("compile_commands.json"
+                  ".ccls")
+                projectile-project-root-files-top-down-recurring)))
+
 ;; (add-hook 'prog-mode-hook '(lambda () (setq company-backends
 ;;                                  '((company-lsp :with company-yasnippet) company-keywords company-files company-capf
 ;;                                   (company-dabbrev-code company-etags company-gtags)))))
 
+(use-package cmake-mode
+  :ensure t
+  :mode (("CMakeLists\\.txt\\'"　. cmake-mode)
+         ("\\.cmake\\'" . cmake-mode))
+  :bind (:map cmake-mode-map
+         ("C-c d" . cmake-help))
+  ;; 需要的时候可以设置一下补全的选项
+  )

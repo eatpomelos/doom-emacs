@@ -37,6 +37,9 @@
 (defadvice swiper (after pomelo-swiper-hack activate)
   (recenter-top-bottom))
 
+(defadvice package-install (before pomelo-package-install-hack)
+  (package-refresh-contents))
+
 (defadvice counsel-ag (after pomelo-ag-hack activate)
   (recenter-top-bottom))
 
